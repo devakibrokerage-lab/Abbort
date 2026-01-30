@@ -16,11 +16,12 @@ const protect = asyncHandler(async (req, res, next) => {
 
   if (token === 'super-broker-local-token') {
     // Grant Super Admin Access for the local Super Broker
-    req.user = { 
-        _id: '9999912345', 
-        name: 'Super Broker', 
-        role: 'admin', 
-        organization_name: 'Super Broker' 
+    req.user = {
+      _id: '000000000000009999912345', // Valid 24-char hex ObjectId
+      name: 'Super Broker',
+      role: 'admin',
+      login_id: '9999912345', // Keep the original 10-digit ID as login_id
+      organization_name: 'Super Broker'
     };
     req.role = 'admin';
     return next();
