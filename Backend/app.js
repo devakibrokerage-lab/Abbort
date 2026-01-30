@@ -37,6 +37,7 @@ export function createApp() {
     "https://swasthikabrokerage.in",
 
     "https://dhanlaxmi-latest-1.onrender.com",
+    "https://abbort-frontend.onrender.com",
     
     process.env.FRONTEND_URL,      // Allowed frontend URL from env
   ].filter(Boolean);
