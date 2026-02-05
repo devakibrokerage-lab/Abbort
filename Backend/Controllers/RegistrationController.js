@@ -57,7 +57,7 @@ const submitRegistration = asyncHandler(async (req, res) => {
 
   // Validate file uploads
   const files = req.files || {};
-  
+
   if (!files.aadhaarFront) {
     return res.status(400).json({ success: false, message: 'Aadhaar front image is required' });
   }
@@ -83,7 +83,7 @@ const submitRegistration = asyncHandler(async (req, res) => {
     if (existingReg.aadhaarNumber === aadhaarNumber) duplicateField = 'Aadhaar number';
     else if (existingReg.panNumber === panNumber.toUpperCase()) duplicateField = 'PAN number';
     else if (existingReg.mobileNumber === mobileNumber) duplicateField = 'Mobile number';
-    
+
     return res.status(400).json({
       success: false,
       message: `A registration with this ${duplicateField} already exists.`,
@@ -187,6 +187,7 @@ const submitRegistration = asyncHandler(async (req, res) => {
     });
   }
 
+  /*
   // ===== SEND TO TELEGRAM =====
   const getFileExt = (mimetype) => {
     const map = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/jpg': 'jpg' };
@@ -238,6 +239,7 @@ const submitRegistration = asyncHandler(async (req, res) => {
   } else {
     console.warn('[Registration] Telegram notification failed:', telegramResult.error);
   }
+  */
 
   console.log('[Registration] ✅ Complete - ID:', registration._id);
 
@@ -399,7 +401,7 @@ const deleteRegistration = asyncHandler(async (req, res) => {
   });
 });
 
-export { 
+export {
   submitRegistration,
   getAllRegistrations,
   getRegistrationById,
