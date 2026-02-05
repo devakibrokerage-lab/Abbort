@@ -38,6 +38,11 @@ export function createApp() {
 
     "https://dhanlaxmi-latest-1.onrender.com",
     "https://abbort-frontend.onrender.com",
+    "https://abbot.in",
+    "https://www.abbot.in",
+    "abbot.in",
+
+    
     
     process.env.FRONTEND_URL,      // Allowed frontend URL from env
   ].filter(Boolean);
